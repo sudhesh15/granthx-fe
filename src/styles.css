@@ -39,7 +39,7 @@ body {
 /* Dashboard Layout */
 .dashboard {
   display: flex;
-  height: 100vh;
+  height: 80vh;
   overflow: hidden;
   background: var(--bg-primary);
 }
@@ -211,7 +211,6 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 32px;
   margin-bottom: 40px;
-  max-width: 1200px;
 }
 
 /* Cards/Panels */
@@ -219,7 +218,7 @@ body {
   background: var(--bg-secondary);
   border: 1px solid var(--border-primary);
   border-radius: 12px;
-  padding: 24px;
+  padding: 16px;
   box-shadow: var(--shadow-lg);
   transition: all 0.2s ease;
 }
@@ -497,8 +496,8 @@ body {
   position: fixed;
   bottom: 92px;
   right: 24px;
-  width: 420px;
-  height: 650px;
+  width: 550px;
+  height: 450px;
   background: var(--bg-secondary);
   border: 1px solid var(--border-primary);
   border-radius: 16px;
@@ -1679,3 +1678,131 @@ body {
 .code-block::-webkit-scrollbar-thumb:hover {
   background: #a8a8a8;
 }
+
+body { background: var(--bg-secondary); color: var(--text-primary); }
+.app-root { min-height: 100vh; display: flex; flex-direction: column; }
+
+/* ---------- Top Bar ---------- */
+.topbar{
+  height: 64px;
+  background: linear-gradient(90deg, var(--bg-primary), var(--bg-secondary) 70%);
+  color: var(--text-primary);
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 0 18px;
+  border-bottom: 1px solid var(--border-primary);
+  position: sticky; top: 0; z-index: 20;
+  box-shadow: var(--shadow-sm);
+}
+
+.brand{ display:flex; align-items:center; gap:10px; font-weight:700; }
+.brand__name{ font-size: 15px; color: var(--text-primary); }
+.brand__dot{
+  width: 12px; height: 12px; border-radius: 999px;
+  background: var(--accent-green);
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--accent-green) 25%, transparent),
+              0 8px 16px rgba(0,0,0,.35);
+}
+.brand__dot--lg{ width: 14px; height: 14px; }
+
+/* ---------- Content Shell ---------- */
+.content{ flex:1; padding: 22px; display:flex; }
+.panel{
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-primary);
+  border-radius: 18px;
+  box-shadow: var(--shadow-lg);
+  padding: 18px;
+}
+
+/* ---------- Auth (SignedOut) ---------- */
+.auth{ display:grid; place-items:center; width:100%; min-height: calc(100vh - 64px); }
+.auth__card{ width: 100%; max-width: 420px; display:flex; flex-direction:column; gap:14px; }
+.auth__brand{
+  display:flex; align-items:center; gap:10px; justify-content:center;
+  color: var(--text-secondary); font-weight:600;
+}
+.brand__title{ color: var(--text-primary); }
+
+/* Clerk dark tweaks */
+.dark-card{
+  background: var(--bg-tertiary) !important;
+  border: 1px solid var(--border-primary) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+.dark-input{
+  background: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-primary) !important;
+}
+.dark-input:focus{
+  outline: 2px solid var(--accent-green-hover) !important;
+  outline-offset: 0 !important;
+  border-color: var(--accent-green) !important;
+}
+
+/* Buttons */
+.cl-btn--primary{
+  background: var(--accent-green) !important;
+  color: #0b0f0d !important;
+  border: 1px solid var(--accent-green) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+.cl-btn--primary:hover{
+  filter: brightness(1.05);
+}
+
+/* Optional: align social buttons horizontally */
+.cl-social--row{
+  display:flex !important; gap:10px !important; flex-direction: row !important;
+}
+
+/* Utilities */
+.hidden{ display:none !important; }
+
+/* Responsive */
+@media (max-width: 640px){
+  .content{ padding: 14px; }
+  .panel{ border-radius: 14px; padding: 14px; }
+}
+
+.integration-section {
+  margin-top: 2rem;
+}
+
+.integration-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+.integration-card button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: var(--accent-green);
+  border: none;
+  color: #000;
+  font-weight: bold;
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.integration-card button:hover {
+  background: var(--accent-green-hover);
+}
+
+.integration-pre {
+  overflow-x: auto;
+  max-height: 300px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}
+

@@ -13,7 +13,7 @@ export default function Sidebar({ activeTab, setActiveTab }) {
     },
     { 
       id: "index", 
-      label: "Index", 
+      label: "Content Indexing", 
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
           <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
@@ -38,7 +38,7 @@ export default function Sidebar({ activeTab, setActiveTab }) {
           <img src={logo} alt="GranthX Logo" style={{ width: "40px", height: "auto" }} />
         </div>
         <div className="brand-text">
-          <div className="title">granthX.ai</div>
+          <div className="title">GranthX.ai</div>
           <div className="subtitle">Index • Ask • Learn</div>
         </div>
       </div>
