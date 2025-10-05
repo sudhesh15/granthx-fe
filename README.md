@@ -1,52 +1,26 @@
-GranthX Frontend — README
-Overview
+# GranthX Frontend
 
-React app for GranthX.ai: lets users index content, chat with context, and view analytics. Points to a separate backend via REACT_APP_API_BASE.
+## Overview
+The frontend for **GranthX.ai**, a GenAI-powered platform that transforms documents, websites, and data into interactive conversations.  
+It connects to the backend API to index content, enable chat, and display analytics.
 
-Tech
+---
 
-React (CRA/Vite compatible)
+## Tech Stack
+- **React** (CRA / Vite compatible)  
+- **Clerk** (Authentication)  
 
-Clerk (auth) — publishable key on client
+---
 
-Prerequisites
+## Prerequisites
+- Node.js **v18+**  
+- npm or yarn  
 
-Node 18+
+---
 
-npm or yarn
+## Environment Variables
+Create a `.env` file in the project root:
 
-Environment
-
-Create .env in the project root:
-
+```env
 REACT_APP_API_BASE=http://localhost:5000
 REACT_APP_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
-
-
-REACT_APP_API_BASE should point to your backend (local or deployed).
-
-Install & Run
-npm install
-npm start         # dev server
-# or
-npm run build     # production build
-npm run preview   # if using Vite
-
-Config Notes
-
-CORS: Backend must allow the frontend origin.
-
-Auth (Clerk): Ensure the same domain is configured in Clerk for local/dev.
-
-Folder Tips (optional)
-src/
-  components/
-  pages/
-  hooks/
-  lib/        # API client using REACT_APP_API_BASE
-
-Troubleshooting
-
-404s or blank screen after build: ensure your host serves SPA fallback to index.html.
-
-Network errors: check REACT_APP_API_BASE and backend CORS.
